@@ -16,7 +16,8 @@ import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Created by evelina on 1/18/18.
+ * This test checks sign-up logic
+ * @author evelina
  */
 public class SignupTest {
 
@@ -29,15 +30,13 @@ public class SignupTest {
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get(APP_URL + "/sign-up");
-
-
-
-
-
     }
 
+    /**
+     * Should register a user successfully
+     */
     @Test
-    public void userSignup() {
+    public void shouldSignupAUser() {
 
         WebElement firstNameField = driver.findElement(By.cssSelector("[name=firstName]"));
         firstNameField.sendKeys("Auto");
